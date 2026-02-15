@@ -23,20 +23,25 @@ factorial:
 	sw $a0, 4($sp) 
 		
 	slti $t0, $a0, 1 
-	bne $t0, $0, end_sequence
+	bne $t0, $0, Base_case
 		
-	addi $a0, a0, -1
+	addi $a0, $a0, -1
 
 	jal factorial 
 	
 	lw $t1, 4($sp)
 	
 	mult $t1, $v0
-	mflo $v0	 
+	mflo $v0
 	
+	j end_sequence
+	 
+Base_case:
+	
+	li $v0, 1
+
 end_sequence:
 
-	li $v0, 1
 	lw $ra, 0($sp)
 	addi $sp, $sp, 8 
 	jr $ra

@@ -18,3 +18,5 @@ main:
 	add $t3, $t2, $t1 #adds the result with $t1
 	sw $t3, final_val
 	
+	li $v0, 10 
+	syscall

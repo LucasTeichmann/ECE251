@@ -1,7 +1,6 @@
 .data
         array: .word 5, -2, 18, -1, -30
 	array_size: .word 5
-	count: .word 0
 .text
 .globl main
 
